@@ -9,7 +9,7 @@ export default class DistrictRepository {
         acc[district.Location] = { location: district.Location, data: [] }
       }
       let dataPoint = {
-        [district.TimeFrame]: district.Data
+        [district.TimeFrame]: Math.round(1000 * district.Data) / 1000 || 0
       }
       acc[district.Location].data.push(dataPoint)
       return acc
@@ -17,18 +17,9 @@ export default class DistrictRepository {
     return DistrictData
   }
 
-  findByName(location) {
-    const locations = Object.keys(this.stats)
-    
+  findByName = (location) => {
 
   }
-  
+
 
 }
-
-// [
-//   {
-//     location: 'colorado',
-//     data: [{ 2001: 34 }, { 2002: 44 }]
-//   }
-// ]
