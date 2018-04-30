@@ -6,7 +6,7 @@ export default class DistrictRepository {
   cleanData(data) {
     let DistrictData = data.reduce((acc, district) => {
       if (!acc[district.Location]) {
-        acc[district.Location] = { location: district.Location, data: [] }
+        acc[district.Location] = { location: district.Location.toUpperCase(), data: [] }
       }
       let dataPoint = {
         [district.TimeFrame]: Math.round(1000 * district.Data) / 1000 || 0
@@ -17,8 +17,13 @@ export default class DistrictRepository {
     return DistrictData
   }
 
-  findByName = (location) => {
-
+  findByName(location) {
+    if(!location) {
+      return undefined
+    }
+    const districts = Object.keys(this.stats)
+    const foundDistrict = districts.find(district => district.toUpperCase().includes(location.toUpperCase()))
+    return this.stats[foundDistrict]
   }
 
 
