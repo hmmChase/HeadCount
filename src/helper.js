@@ -27,5 +27,16 @@ export default class DistrictRepository {
     return this.stats[foundDistrict]
   }
 
+  findAllMatches(inputValue) {
+    const districts = Object.keys(this.stats)
+    if(!inputValue) {
+      return districts.map(district => this.stats[district])
+    } else {
+      const filteredDistricts = districts.filter(district => district.toUpperCase().includes(inputValue.toUpperCase()))
+      const districtObjects = filteredDistricts.map(district => this.stats[district])
+      return districtObjects
+    }
+  }
+
 
 }
