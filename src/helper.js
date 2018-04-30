@@ -6,7 +6,7 @@ export default class DistrictRepository {
   cleanData(data) {
     let DistrictData = data.reduce((acc, district) => {
       if (!acc[district.Location]) {
-        acc[district.Location] = { data: [] }
+        acc[district.Location] = { location: district.Location, data: [] }
       }
       let dataPoint = {
         [district.TimeFrame]: district.Data
@@ -16,6 +16,13 @@ export default class DistrictRepository {
     }, {})
     return DistrictData
   }
+
+  findByName(location) {
+    const locations = Object.keys(this.stats)
+    
+
+  }
+  
 
 }
 
