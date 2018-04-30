@@ -10,6 +10,7 @@ class App extends Component {
 
   componentDidMount() {
     const district = new DistrictRepository(kinderData)
+    console.log(district.stats)
   }
 
   render() {

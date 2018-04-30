@@ -6,13 +6,10 @@ export default class DistrictRepository {
   cleanData(data) {
     let DistrictData = data.reduce((acc, district) => {
       if (!acc[district.Location]) {
-        acc[district.Location] = {
-          data: [],
-          DataFormat: district.DataFormat
-        }
+        acc[district.Location] = { data: [] }
       }
       let dataPoint = {
-        [district.TimeFrame]: district.data
+        [district.TimeFrame]: district.Data
       }
       acc[district.Location].data.push(dataPoint)
       return acc
