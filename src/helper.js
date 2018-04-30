@@ -6,12 +6,13 @@ export default class DistrictRepository {
   cleanData(data) {
     let DistrictData = data.reduce((acc, district) => {
       if (!acc[district.Location]) {
-        acc[district.Location] = { location: district.Location.toUpperCase(), data: [] }
+        acc[district.Location] = { 
+          location: district.Location.toUpperCase(),
+          stats: {} 
+        }
       }
-      let dataPoint = {
-        [district.TimeFrame]: Math.round(1000 * district.Data) / 1000 || 0
-      }
-      acc[district.Location].data.push(dataPoint)
+      acc[district.Location].stats = 
+      Object.assign({}, acc[district.Location].stats, {[district.TimeFrame]: Math.round(1000 * district.Data) / 1000 || 0})
       return acc
     }, {})
     return DistrictData
