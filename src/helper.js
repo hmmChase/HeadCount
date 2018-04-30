@@ -9,7 +9,7 @@ export default class DistrictRepository {
         acc[district.Location] = { location: district.Location.toUpperCase(), data: [] }
       }
       let dataPoint = {
-        [district.TimeFrame]: district.Data
+        [district.TimeFrame]: Math.round(1000 * district.Data) / 1000 || 0
       }
       acc[district.Location].data.push(dataPoint)
       return acc
@@ -25,13 +25,6 @@ export default class DistrictRepository {
     const foundDistrict = districts.find(district => district.toUpperCase().includes(location.toUpperCase()))
     return this.stats[foundDistrict]
   }
-  
+
 
 }
-
-// [
-//   {
-//     location: 'colorado',
-//     data: [{ 2001: 34 }, { 2002: 44 }]
-//   }
-// ]
