@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DistrictRepository from '../../helper';
 import kinderData from '../../data/kindergartners_in_full_day_program';
 import DistrictContainer from '../DistrictContainer/DistrictContainer';
+import Form from '../Form/Form'
 import './App.css';
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
     return (
       <div>
         <h1>Welcome To Headcount 2.0</h1>
+        <Form />
         <DistrictContainer foundDistricts={this.state.foundDistricts} />
       </div>
     );
