@@ -46,4 +46,27 @@ export default class DistrictRepository {
       return districtObjects;
     }
   }
+
+  findAverage(district) {
+    const foundDistrict = this.findByName(district)
+    const statsKeys = Object.keys(foundDistrict.stats)
+    const average = statsKeys.reduce((total, year) => {
+      return total + foundDistrict.stats[year]
+    }, 0) / statsKeys.length
+
+    return Math.round(1000 * average) / 1000 
+  }
+
+  compareDistrictAverages(district1, district2) {
+    const district1Average = this.findAverage(district1)
+    const district2Average = this.findAverage(district2)
+    const comparedAverage = Math.round(1000 * (district1Average / district2Average)) / 1000
+
+    return {
+      [district1.toUpperCase()]: district1Average,
+      [district2.toUpperCase()]: district2Average,
+      'compared': comparedAverage
+    }    
+
+  }
 }
