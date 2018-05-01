@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
 import kinderData from '../../data/kindergartners_in_full_day_program';
 
