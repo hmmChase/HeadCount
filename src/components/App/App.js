@@ -5,6 +5,8 @@ import DistrictContainer from '../DistrictContainer/DistrictContainer';
 import Form from '../Form/Form'
 import './App.css';
 
+const district = new DistrictRepository(kinderData);
+
 class App extends Component {
   constructor() {
     super();
@@ -15,18 +17,24 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const district = new DistrictRepository(kinderData);
     const foundDistricts = district.findAllMatches();
     this.setState({
       foundDistricts
     });
   }
 
+  filterDistricts = (searchValue) => {
+    const filteredDistricts = district.findAllMatches(searchValue)
+    this.setState({
+      foundDistricts: filteredDistricts
+    })
+  }
+
   render() {
     return (
       <div>
         <h1>Welcome To Headcount 2.0</h1>
-        <Form />
+        <Form filterDistricts={this.filterDistricts}/>
         <DistrictContainer foundDistricts={this.state.foundDistricts} />
       </div>
     );
