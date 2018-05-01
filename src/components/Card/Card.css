@@ -5,3 +5,27 @@
 .belowColor {
   color: red;
 }
+
+.card {
+  border-radius: 14px;
+  border: 1px solid grey;
+  width: 20%;
+  height: 40vh;
+  margin: 2%;
+  text-align: -webkit-left;
+
+}
+
+.card li {
+  text-align: center;
+}
+
+.card ul {
+  width: auto;
+  text-align: center;
+  list-style-type: none;
+}
+
+.card h3 {
+  text-align: center;
+}
