@@ -8,7 +8,7 @@ const Card = ({ location, stats }) => {
     return <li key={`year ${index}`}>{stat} :  <span className={statColor}>{stats[stat]}</span></li>
   })
   return (
-    <article>
+    <article className='card'>
       <h3>{location}</h3>
       <ul>{statsList}</ul>
     </article>

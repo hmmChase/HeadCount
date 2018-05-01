@@ -7,7 +7,7 @@ const DistrictContainer = ({ foundDistricts }) => {
     return <Card key={`Card ${index}`} {...district} />;
   });
 
-  return <section>{districtCards}</section>;
+  return <section className='cardContainer'>{districtCards}</section>;
 };
 
 export default DistrictContainer;
