@@ -5,26 +5,25 @@ import DistrictContainer from '../DistrictContainer/DistrictContainer';
 import Form from '../Form/Form'
 import './App.css';
 
-const district = new DistrictRepository(kinderData);
-
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
+      district: new DistrictRepository(kinderData),
       foundDistricts: []
     };
   }
 
   componentDidMount() {
-    const foundDistricts = district.findAllMatches();
+    const foundDistricts = this.state.district.findAllMatches();
     this.setState({
       foundDistricts
     });
   }
 
   filterDistricts = (searchValue) => {
-    const filteredDistricts = district.findAllMatches(searchValue)
+    const filteredDistricts = this.state.district.findAllMatches(searchValue)
     this.setState({
       foundDistricts: filteredDistricts
     })
