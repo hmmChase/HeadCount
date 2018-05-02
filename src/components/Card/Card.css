@@ -52,3 +52,7 @@
   margin-top: 7.2px;
   box-shadow: 1px 1px #1f1010;
 }
+
+.clicked {
+  box-shadow: 5px 5px red
+}

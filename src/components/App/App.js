@@ -89,6 +89,7 @@ class App extends Component {
           comparisonObject={this.state.comparisonObject}
         />
         <DistrictContainer
+          comparedDistricts={this.state.comparedDistricts}
           foundDistricts={this.state.foundDistricts}
           changeSelectedDistricts={this.changeSelectedDistricts}
         />

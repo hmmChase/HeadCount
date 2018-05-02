@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import './Card.css';
 
-const Card = ({ location, stats, changeSelectedDistricts }) => {
+const Card = ({ location, stats, changeSelectedDistricts, clicked }) => {
   let statsKeys = Object.keys(stats);
   let statsList = statsKeys.map((stat, index) => {
     const statColor = stats[stat] >= 0.5 ? 'aboveColor' : 'belowColor';
@@ -13,9 +13,18 @@ const Card = ({ location, stats, changeSelectedDistricts }) => {
     );
   });
 
+  let isClicked
+
+  if (clicked) {
+    isClicked = 'clicked card'
+  } else {
+    isClicked = 'card'
+  }
 
   return (
-    <article className="card" onClick={() => changeSelectedDistricts(location)}>
+    <article 
+      className={isClicked}  
+      onClick={() => changeSelectedDistricts(location)}>
       <h3>{location}</h3>
       <ul>{statsList}</ul>
     </article>
