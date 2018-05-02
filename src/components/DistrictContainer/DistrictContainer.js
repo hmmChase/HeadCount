@@ -12,7 +12,7 @@ const DistrictContainer = ({ foundDistricts }) => {
 };
 
 DistrictContainer.propTypes = {
-  foundDistricts: propTypes.array.isRequired
+  foundDistricts: PropTypes.array.isRequired
 }
 
 export default DistrictContainer;
