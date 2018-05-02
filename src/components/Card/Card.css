@@ -52,3 +52,12 @@
   margin-top: 7.2px;
   box-shadow: 1px 1px #1f1010;
 }
+
+.clicked {
+  border: 3px solid #f443368c;
+  background-color: #ff57220d;
+}
+
+.clicked:hover {
+  box-shadow: 1px 1px red
+}
