@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 
 import ComparisonCard from '../ComparisonCard/ComparisonCard'
-const ComparisonContainer = ({comparedDistricts, changeSelectedDistricts}) => {
+const ComparisonContainer = ({comparedDistricts, changeSelectedDistricts, comparisonObject}) => {
   const districtCards = comparedDistricts.map((district, index) => {
     return (
       <Card
@@ -15,7 +15,13 @@ const ComparisonContainer = ({comparedDistricts, changeSelectedDistricts}) => {
       />
     );
   })
-    return <section className="comparisonContainer">{districtCards}</section>
+
+  return (
+    <section className="comparisonContainer">
+      {(Object.keys(comparisonObject).length > 0) && <ComparisonCard comparisonObject={comparisonObject}/>}
+      {districtCards}
+    </section>
+  )
 };
 
 ComparisonContainer.propTypes = {
