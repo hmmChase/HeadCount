@@ -32,7 +32,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome To Headcount 2.0</h1>
         <Form filterDistricts={this.filterDistricts}/>
         <DistrictContainer foundDistricts={this.state.foundDistricts} />
       </div>
