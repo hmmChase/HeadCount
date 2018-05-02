@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './Form.css';
+import PropTypes from 'prop-types'
+import './Form.css'
 
 class Form extends Component {
   constructor(props) {
@@ -38,4 +39,9 @@ class Form extends Component {
   }
 }
 
-export default Form;
+Form.propTypes = {
+  filterDistricts: PropTypes.func.isRequired
+}
+
+export default Form
+

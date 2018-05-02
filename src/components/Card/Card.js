@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import './Card.css';
 
 const Card = ({ location, stats, changeSelectedDistricts }) => {
@@ -18,5 +19,10 @@ const Card = ({ location, stats, changeSelectedDistricts }) => {
     </article>
   );
 };
+
+Card.propTypes = {
+  location: PropTypes.string.isRequired,
+  stats: PropTypes.object.isRequired
+}
 
 export default Card;
