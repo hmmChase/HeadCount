@@ -45,6 +45,9 @@ class App extends Component {
         comparedDistrict => comparedDistrict !== selectedDistrictObject
       );
       this.updateComparedDistricts(filteredDistricts);
+      this.setState({
+        comparisonObject: {}
+      })
 
     } else if (this.state.comparedDistricts.length === 1) {
       const addedDistrict = [
