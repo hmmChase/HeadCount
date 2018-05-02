@@ -54,5 +54,10 @@
 }
 
 .clicked {
-  box-shadow: 5px 5px red
+  border: 3px solid #f443368c;
+  background-color: #ff57220d;
+}
+
+.clicked:hover {
+  box-shadow: 1px 1px red
 }
