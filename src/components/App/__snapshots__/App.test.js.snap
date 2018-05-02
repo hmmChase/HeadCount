@@ -18,30 +18,23 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h1>
-          Welcome To Headcount 2.0
-</h1>,
         <Form
           filterDistricts={[Function]}
 />,
+        <ComparisonContainer
+          changeSelectedDistricts={[Function]}
+          comparedDistricts={Array []}
+          comparisonObject={Object {}}
+/>,
         <DistrictContainer
+          changeSelectedDistricts={[Function]}
+          comparedDistricts={Array []}
           foundDistricts={Array []}
 />,
       ],
     },
     "ref": null,
     "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Welcome To Headcount 2.0",
-        },
-        "ref": null,
-        "rendered": "Welcome To Headcount 2.0",
-        "type": "h1",
-      },
       Object {
         "instance": null,
         "key": undefined,
@@ -58,6 +51,21 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
+          "changeSelectedDistricts": [Function],
+          "comparedDistricts": Array [],
+          "comparisonObject": Object {},
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "changeSelectedDistricts": [Function],
+          "comparedDistricts": Array [],
           "foundDistricts": Array [],
         },
         "ref": null,
@@ -74,30 +82,23 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h1>
-            Welcome To Headcount 2.0
-</h1>,
           <Form
             filterDistricts={[Function]}
 />,
+          <ComparisonContainer
+            changeSelectedDistricts={[Function]}
+            comparedDistricts={Array []}
+            comparisonObject={Object {}}
+/>,
           <DistrictContainer
+            changeSelectedDistricts={[Function]}
+            comparedDistricts={Array []}
             foundDistricts={Array []}
 />,
         ],
       },
       "ref": null,
       "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Welcome To Headcount 2.0",
-          },
-          "ref": null,
-          "rendered": "Welcome To Headcount 2.0",
-          "type": "h1",
-        },
         Object {
           "instance": null,
           "key": undefined,
@@ -114,6 +115,21 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
+            "changeSelectedDistricts": [Function],
+            "comparedDistricts": Array [],
+            "comparisonObject": Object {},
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "changeSelectedDistricts": [Function],
+            "comparedDistricts": Array [],
             "foundDistricts": Array [],
           },
           "ref": null,
