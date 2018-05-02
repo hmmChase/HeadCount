@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 import './Form.css'
 
 class Form extends Component {
@@ -36,6 +37,10 @@ class Form extends Component {
       </div>
     )
   }
+}
+
+Form.propTypes = {
+  filterDistricts: PropTypes.func.isRequired
 }
 
 export default Form
