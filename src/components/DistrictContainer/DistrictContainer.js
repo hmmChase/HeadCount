@@ -5,12 +5,13 @@ import './DistrictContainer.css';
 
 const DistrictContainer = ({ foundDistricts, changeSelectedDistricts, comparedDistricts }) => {
   const districtCards = foundDistricts.map((district, index) => {
-    let clicked
+    let clicked;
     if (comparedDistricts.includes(district)) {
-      clicked = true
+      clicked = true;
     } else {
-      clicked = false
+      clicked = false;
     }
+
     return (
       <Card
         clicked={clicked}

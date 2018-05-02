@@ -25,7 +25,9 @@ const ComparisonContainer = ({comparedDistricts, changeSelectedDistricts, compar
 };
 
 ComparisonContainer.propTypes = {
-  comparedDistricts: PropTypes.array.isRequired
+  comparedDistricts: PropTypes.array.isRequired,
+  changeSelectedDistricts: PropTypes.func.isRequired,
+  comparisonObject: PropTypes.object.isRequired
 };
 
 export default ComparisonContainer;
