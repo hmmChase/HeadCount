@@ -7,25 +7,37 @@
 }
 
 .card {
-  border-radius: 14px;
+  border-radius: 10px;
   border: 1px solid grey;
+  cursor: pointer;
   width: 20%;
-  height: 40vh;
   margin: 2%;
-  text-align: -webkit-left;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
 
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .card li {
-  text-align: center;
+  text-align: justify;
+  width: 30%;
+  margin: auto;
 }
 
 .card ul {
-  width: auto;
-  text-align: center;
   list-style-type: none;
+  padding: 0;
 }
 
 .card h3 {
+  background-color: #416387;
   text-align: center;
+  box-sizing: border-box;
+  padding: 2vh;
+  color: whitesmoke;
+  margin-top: 7.2px;
+  box-shadow: 1px 1px #1f1010;
 }
+
