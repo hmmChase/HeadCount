@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import './ComparisonCard.css'
 
 const ComparisonCard = ({comparisonObject}) => {
@@ -11,6 +12,10 @@ const ComparisonCard = ({comparisonObject}) => {
       <h3>Comparison: {comparisonObject[keys[2]]}</h3>
     </article>
   )
+}
+
+ComparisonCard.propTypes = {
+  comparisonObject: PropTypes.object.isRequired
 }
 
 export default ComparisonCard

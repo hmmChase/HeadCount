@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import './Card.css';
 
 const Card = ({ location, stats, changeSelectedDistricts, clicked }) => {
@@ -13,12 +13,12 @@ const Card = ({ location, stats, changeSelectedDistricts, clicked }) => {
     );
   });
 
-  let isClicked
+  let isClicked;
 
   if (clicked) {
-    isClicked = 'clicked card'
+    isClicked = 'clicked card';
   } else {
-    isClicked = 'card'
+    isClicked = 'card';
   }
 
   return (
@@ -33,7 +33,9 @@ const Card = ({ location, stats, changeSelectedDistricts, clicked }) => {
 
 Card.propTypes = {
   location: PropTypes.string.isRequired,
-  stats: PropTypes.object.isRequired
-}
+  stats: PropTypes.object.isRequired,
+  changeSelectedDistricts: PropTypes.func.isRequired,
+  clicked: PropTypes.bool.isRequired
+};
 
 export default Card;
