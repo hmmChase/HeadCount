@@ -1,4 +1,6 @@
 .comparisonContainer {
+  box-shadow: 2px 2px whitesmoke;
+  background-color: #3b404812;
   width: 100%;
   display: -ms-flexbox;
   display: flex;
@@ -6,4 +8,12 @@
   justify-content: space-around;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  animation-name: header-slide-open;
+  animation-duration: 2s;
+}
+
+@keyframes header-slide-open {
+  from {margin-left: -300px};
+  to {margin-left: 0}
+
 }

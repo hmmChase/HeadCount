@@ -1,0 +1,19 @@
+.comparisonCard {
+  border-radius: 10px;
+  background-color: #406287;
+  border: 1px solid #e7ecefad;
+  cursor: pointer;
+  width: 20%;
+  margin: 2%;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgb(162, 168, 171);
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 3s;
+  -webkit-animation-name: card-opacity;
+  animation-name: card-opacity;
+  color: white;
+  padding-top: 10vh;
+}
