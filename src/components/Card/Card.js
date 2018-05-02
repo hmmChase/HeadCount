@@ -1,14 +1,18 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({ location, stats }) => {
-  let statsKeys = Object.keys(stats)
+const Card = ({ location, stats, toggleSelectedDistrict }) => {
+  let statsKeys = Object.keys(stats);
   let statsList = statsKeys.map((stat, index) => {
-    const statColor = stats[stat] >= 0.5 ? 'aboveColor' : 'belowColor'
-    return <li key={`year ${index}`}>{stat} :  <span className={statColor}>{stats[stat]}</span></li>
-  })
+    const statColor = stats[stat] >= 0.5 ? 'aboveColor' : 'belowColor';
+    return (
+      <li key={`year ${index}`}>
+        {stat} : <span className={statColor}>{stats[stat]}</span>
+      </li>
+    );
+  });
   return (
-    <article className='card'>
+    <article className="card" onClick={() => toggleSelectedDistrict(location)}>
       <h3>{location}</h3>
       <ul>{statsList}</ul>
     </article>
