@@ -14,7 +14,8 @@ class App extends Component {
     this.state = {
       district: new DistrictRepository(kinderData),
       foundDistricts: [],
-      comparedDistricts: []
+      comparedDistricts: [],
+      comparisonObject: {}
     };
   }
 
@@ -53,9 +54,11 @@ class App extends Component {
         this.state.comparedDistricts[0],
         selectedDistrictObject
       ];
-
       this.updateComparedDistricts(replacedDistrict);
-
+      let comparedObject = this.state.district.compareDistrictAverages(this.state.comparedDistricts[0].location, this.state.comparedDistricts[1].location);
+      this.setState ({
+        comparisonObject : comparedObject
+      })
       // add selectedDistrictObject to state.comparedDistricts
     } else {
       const addedDistrict = [
@@ -76,7 +79,11 @@ class App extends Component {
     return (
       <div>
         <Form filterDistricts={this.filterDistricts} />
-        <ComparisonContainer />
+        <ComparisonContainer 
+          comparedDistricts={this.state.comparedDistricts}
+          changeSelectedDistricts={this.changeSelectedDistricts}
+          comparisonObjects={this.state.comparisonObject}
+        />
         <DistrictContainer
           foundDistricts={this.state.foundDistricts}
           changeSelectedDistricts={this.changeSelectedDistricts}
