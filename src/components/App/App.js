@@ -35,38 +35,23 @@ class App extends Component {
 
   changeSelectedDistricts = district => {
     const selectedDistrictObject = this.state.district.findByName(district);
-
     const duplicate = this.state.comparedDistricts.includes(
       selectedDistrictObject
     );
-    
     if (duplicate) {
       const filteredDistricts = this.state.comparedDistricts.filter(
         comparedDistrict => comparedDistrict !== selectedDistrictObject
       );
-      this.updateComparedDistricts(filteredDistricts);
       this.setState({
+        comparedDistricts: filteredDistricts,
         comparisonObject: {}
-      })
-
-    } else if (this.state.comparedDistricts.length === 1) {
-      const addedDistrict = [
-        ...this.state.comparedDistricts,
-        selectedDistrictObject
-      ];
-      this.setState({
-        comparedDistricts: addedDistrict
-      }, () => this.runComparison());
-      
+      });
     } else if (this.state.comparedDistricts.length === 2) {
       const replacedDistrict = [
         this.state.comparedDistricts[0],
         selectedDistrictObject
       ];
-      this.setState({
-        comparedDistricts: replacedDistrict
-      }, () => this.runComparison());
-      
+      this.updateComparedDistricts(replacedDistrict);
     } else {
       const addedDistrict = [
         ...this.state.comparedDistricts,
@@ -77,6 +62,11 @@ class App extends Component {
   };
 
   updateComparedDistricts = newState => {
+    if (this.state.comparedDistricts.length >= 1) {
+      this.setState({
+        comparedDistricts: newState
+      }, () => this.runComparison());
+    }
     this.setState({
       comparedDistricts: newState
     });
@@ -93,7 +83,7 @@ class App extends Component {
     return (
       <div>
         <Form filterDistricts={this.filterDistricts} />
-        <ComparisonContainer 
+        <ComparisonContainer
           comparedDistricts={this.state.comparedDistricts}
           changeSelectedDistricts={this.changeSelectedDistricts}
           comparisonObject={this.state.comparisonObject}
