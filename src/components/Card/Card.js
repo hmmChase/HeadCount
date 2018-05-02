@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({ location, stats, toggleSelectedDistrict }) => {
+const Card = ({ location, stats, changeSelectedDistricts }) => {
   let statsKeys = Object.keys(stats);
   let statsList = statsKeys.map((stat, index) => {
     const statColor = stats[stat] >= 0.5 ? 'aboveColor' : 'belowColor';
@@ -12,7 +12,7 @@ const Card = ({ location, stats, toggleSelectedDistrict }) => {
     );
   });
   return (
-    <article className="card" onClick={() => toggleSelectedDistrict(location)}>
+    <article className="card" onClick={() => changeSelectedDistricts(location)}>
       <h3>{location}</h3>
       <ul>{statsList}</ul>
     </article>

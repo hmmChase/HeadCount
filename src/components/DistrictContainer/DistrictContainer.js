@@ -2,13 +2,13 @@ import React from 'react';
 import Card from '../Card/Card';
 import './DistrictContainer.css';
 
-const DistrictContainer = ({ foundDistricts, toggleSelectedDistrict }) => {
+const DistrictContainer = ({ foundDistricts, changeSelectedDistricts }) => {
   const districtCards = foundDistricts.map((district, index) => {
     return (
       <Card
         key={`Card ${index}`}
         {...district}
-        toggleSelectedDistrict={toggleSelectedDistrict}
+        changeSelectedDistricts={changeSelectedDistricts}
       />
     );
   });

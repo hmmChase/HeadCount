@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       district: new DistrictRepository(kinderData),
       foundDistricts: [],
-      comparedCard: []
+      comparedDistricts: []
     };
   }
 
@@ -32,19 +32,44 @@ class App extends Component {
     });
   };
 
-  toggleSelectedDistrict = district => {
-    this.addToCompare(district);
-    this.removeFromCompare(district);
+  changeSelectedDistricts = district => {
+    const selectedDistrictObject = this.state.district.findByName(district);
+
+    //  if state.comparedDistricts includes selectedDistrictObject
+    //  remove duplicate
+    const duplicate = this.state.comparedDistricts.includes(
+      selectedDistrictObject
+    );
+    if (duplicate) {
+      const filteredDistricts = this.state.comparedDistricts.filter(
+        comparedDistrict => comparedDistrict !== selectedDistrictObject
+      );
+      this.updateComparedDistricts(filteredDistricts);
+
+      //  if state.comparedDistricts has 2 objects
+      //  replace the second object
+    } else if (this.state.comparedDistricts.length === 2) {
+      const replacedDistrict = [
+        this.state.comparedDistricts[0],
+        selectedDistrictObject
+      ];
+
+      this.updateComparedDistricts(replacedDistrict);
+
+      // add selectedDistrictObject to state.comparedDistricts
+    } else {
+      const addedDistrict = [
+        ...this.state.comparedDistricts,
+        selectedDistrictObject
+      ];
+      this.updateComparedDistricts(addedDistrict);
+    }
   };
 
-  addToCompare = district => {
-    const districtObject = this.state.district.findByName(district);
-    console.log(districtObject);
-  };
-
-  removeFromCompare = district => {
-    const districtObject = this.state.district.findByName(district);
-    console.log(districtObject);
+  updateComparedDistricts = newState => {
+    this.setState({
+      comparedDistricts: newState
+    });
   };
 
   render() {
@@ -54,7 +79,7 @@ class App extends Component {
         <ComparisonContainer />
         <DistrictContainer
           foundDistricts={this.state.foundDistricts}
-          toggleSelectedDistrict={this.toggleSelectedDistrict}
+          changeSelectedDistricts={this.changeSelectedDistricts}
         />
       </div>
     );
