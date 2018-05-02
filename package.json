@@ -5,6 +5,7 @@
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "prop-types": "^15.6.1",
     "react-scripts": "1.1.0"
   },
   "dependencies": {
@@ -12,6 +13,7 @@
     "react-dom": "^16.2.0"
   },
   "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js ./src/",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
