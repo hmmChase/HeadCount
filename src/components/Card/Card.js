@@ -12,6 +12,8 @@ const Card = ({ location, stats, changeSelectedDistricts }) => {
       </li>
     );
   });
+
+
   return (
     <article className="card" onClick={() => changeSelectedDistricts(location)}>
       <h3>{location}</h3>

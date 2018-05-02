@@ -17,14 +17,6 @@ input {
   box-shadow: 2px 2px 2px gainsboro;
   height: 26vh;
   padding-top: 3vh;
-  animation-duration: 5s;
-  animation-name: header-slide-open;
-}
-
-@keyframes header-slide-open {
-  from {margin-top: -200px};
-  to {margin-top: 0}
-
 }
 
 h1 {
