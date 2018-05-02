@@ -38,4 +38,8 @@ class Form extends Component {
   }
 }
 
+Form.propTypes = {
+  filterDistricts: PropTypes.func.isRequired
+}
+
 export default Form
