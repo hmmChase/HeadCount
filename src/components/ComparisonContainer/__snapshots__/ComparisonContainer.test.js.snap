@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ComparisonContainer matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ComparisonContainer
+    changeSelectedDistricts={[Function]}
+    comparedDistricts={
+        Array [
+            1,
+            2,
+          ]
+    }
+    comparisonObject={Object {}}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        false,
+        Array [
+          <Card
+            changeSelectedDistricts={[Function]}
+/>,
+          <Card
+            changeSelectedDistricts={[Function]}
+/>,
+        ],
+      ],
+      "className": "comparisonContainer",
+    },
+    "ref": null,
+    "rendered": Array [
+      false,
+      Object {
+        "instance": null,
+        "key": "Card 0",
+        "nodeType": "function",
+        "props": Object {
+          "changeSelectedDistricts": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "Card 1",
+        "nodeType": "function",
+        "props": Object {
+          "changeSelectedDistricts": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          false,
+          Array [
+            <Card
+              changeSelectedDistricts={[Function]}
+/>,
+            <Card
+              changeSelectedDistricts={[Function]}
+/>,
+          ],
+        ],
+        "className": "comparisonContainer",
+      },
+      "ref": null,
+      "rendered": Array [
+        false,
+        Object {
+          "instance": null,
+          "key": "Card 0",
+          "nodeType": "function",
+          "props": Object {
+            "changeSelectedDistricts": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "Card 1",
+          "nodeType": "function",
+          "props": Object {
+            "changeSelectedDistricts": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
