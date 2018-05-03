@@ -13,7 +13,9 @@
 .card {
   border-radius: 10px;
   border: 1px solid grey;
-  width: 20%;
+  cursor: pointer;
+  width: 40vh;
+  max-height: 50vh;
   margin: 2%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: #ffffff63;
