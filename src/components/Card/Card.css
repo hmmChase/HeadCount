@@ -13,19 +13,23 @@
 .card {
   border-radius: 10px;
   border: 1px solid grey;
-  cursor: pointer;
   width: 20%;
   margin: 2%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
   background-color: #ffffff63;
+  cursor: pointer;
+  transition: 0.3s;
   animation-duration: 2s;
-  animation-name:card-opacity;
+  animation-name: card-opacity;
 }
 
 @keyframes card-opacity {
-  from {opacity: .7};
-  to {opacity: 1}
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .card:hover {
@@ -33,24 +37,24 @@
 }
 
 .card li {
-  text-align: justify;
   width: 30%;
   margin: auto;
+  text-align: justify;
 }
 
 .card ul {
-  list-style-type: none;
   padding: 0;
+  list-style-type: none;
 }
 
 .card h3 {
+  padding: 2vh;
+  margin-top: 7.2px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px #1f1010;
+  color: whitesmoke;
   background-color: #416387;
   text-align: center;
-  box-sizing: border-box;
-  padding: 2vh;
-  color: whitesmoke;
-  margin-top: 7.2px;
-  box-shadow: 1px 1px #1f1010;
 }
 
 .clicked {
@@ -59,5 +63,5 @@
 }
 
 .clicked:hover {
-  box-shadow: 1px 1px red
+  box-shadow: 1px 1px red;
 }

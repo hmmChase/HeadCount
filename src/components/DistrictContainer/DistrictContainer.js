@@ -1,9 +1,13 @@
 import React from 'react';
 import Card from '../Card/Card';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import './DistrictContainer.css';
 
-const DistrictContainer = ({ foundDistricts, changeSelectedDistricts, comparedDistricts }) => {
+const DistrictContainer = ({
+  foundDistricts,
+  changeSelectedDistricts,
+  comparedDistricts
+}) => {
   const districtCards = foundDistricts.map((district, index) => {
     let clicked;
     if (comparedDistricts.includes(district)) {
@@ -26,7 +30,9 @@ const DistrictContainer = ({ foundDistricts, changeSelectedDistricts, comparedDi
 };
 
 DistrictContainer.propTypes = {
-  foundDistricts: PropTypes.array.isRequired
-}
+  foundDistricts: PropTypes.array.isRequired,
+  changeSelectedDistricts: PropTypes.func.isRequired,
+  comparedDistricts: PropTypes.array.isRequired
+};
 
 export default DistrictContainer;

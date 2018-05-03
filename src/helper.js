@@ -1,9 +1,9 @@
 export default class DistrictRepository {
-  constructor (data) {
+  constructor(data) {
     this.stats = this.cleanData(data);
   }
 
-  cleanData (data) {
+  cleanData(data) {
     let DistrictData = data.reduce((districtObject, district) => {
       if (!districtObject[district.Location]) {
         districtObject[district.Location] = {
@@ -21,7 +21,7 @@ export default class DistrictRepository {
     return DistrictData;
   }
 
-  findByName (location) {
+  findByName(location) {
     if (!location) {
       return undefined;
     }
@@ -32,7 +32,7 @@ export default class DistrictRepository {
     return this.stats[foundDistrictName];
   }
 
-  findAllMatches (inputValue) {
+  findAllMatches(inputValue) {
     const districts = Object.keys(this.stats);
     if (!inputValue) {
       return districts.map(district => this.stats[district]);
@@ -47,26 +47,27 @@ export default class DistrictRepository {
     }
   }
 
-  findAverage (district) {
+  findAverage(district) {
     const foundDistrict = this.findByName(district);
     const statsKeys = Object.keys(foundDistrict.stats);
-    const average = statsKeys.reduce((total, year) => {
-      return total + foundDistrict.stats[year];
-    }, 0) / statsKeys.length;
+    const average =
+      statsKeys.reduce((total, year) => {
+        return total + foundDistrict.stats[year];
+      }, 0) / statsKeys.length;
 
-    return Math.round(1000 * average) / 1000; 
+    return Math.round(1000 * average) / 1000;
   }
 
-  compareDistrictAverages (district1, district2) {
+  compareDistrictAverages(district1, district2) {
     const district1Average = this.findAverage(district1);
     const district2Average = this.findAverage(district2);
-    const comparedAverage = Math.round(1000 * (district1Average / district2Average)) / 1000;
+    const comparedAverage =
+      Math.round(1000 * (district1Average / district2Average)) / 1000;
 
     return {
       [district1.toUpperCase()]: district1Average,
       [district2.toUpperCase()]: district2Average,
-      'compared': comparedAverage
-    };    
-
+      compared: comparedAverage
+    };
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
-import './Form.css'
+import PropTypes from 'prop-types';
+import './Form.css';
 
 class Form extends Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class Form extends Component {
             name="district"
             placeholder="Search Districts"
             value={this.state.searchInput}
-            onChange={e => this.handleInputChange(e)}
+            onChange={this.handleInputChange}
           />
         </form>
       </div>
@@ -41,7 +41,6 @@ class Form extends Component {
 
 Form.propTypes = {
   filterDistricts: PropTypes.func.isRequired
-}
+};
 
-export default Form
-
+export default Form;
