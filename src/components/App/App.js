@@ -63,9 +63,10 @@ class App extends Component {
 
   updateComparedDistricts = newState => {
     if (this.state.comparedDistricts.length >= 1) {
-      this.setState({
-        comparedDistricts: newState
-      }, () => this.runComparison());
+      this.setState(
+        { comparedDistricts: newState },
+        () => this.runComparison()
+      );
     }
     this.setState({
       comparedDistricts: newState
@@ -73,11 +74,12 @@ class App extends Component {
   };
 
   runComparison = () => {
-    let comparedObject = this.state.district.compareDistrictAverages(this.state.comparedDistricts[0].location, this.state.comparedDistricts[1].location);
-    this.setState({
-      comparisonObject: comparedObject
-    });
-  }
+    let comparedObject = this.state.district.compareDistrictAverages(
+      this.state.comparedDistricts[0].location,
+      this.state.comparedDistricts[1].location
+    );
+    this.setState({ comparisonObject: comparedObject });
+  };
 
   render() {
     return (

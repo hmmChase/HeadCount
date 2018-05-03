@@ -22,9 +22,10 @@ const Card = ({ location, stats, changeSelectedDistricts, clicked }) => {
   }
 
   return (
-    <article 
-      className={isClicked}  
-      onClick={() => changeSelectedDistricts(location)}>
+    <article
+      className={isClicked}
+      onClick={() => changeSelectedDistricts(location)}
+    >
       <h3>{location}</h3>
       <ul>{statsList}</ul>
     </article>
