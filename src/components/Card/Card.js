@@ -36,7 +36,7 @@ Card.propTypes = {
   location: PropTypes.string.isRequired,
   stats: PropTypes.object.isRequired,
   changeSelectedDistricts: PropTypes.func.isRequired,
-  clicked: PropTypes.bool.isRequired
+  clicked: PropTypes.bool
 };
 
 export default Card;

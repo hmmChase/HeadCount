@@ -21,10 +21,10 @@ const ComparisonContainer = ({
 
   return (
     <section className="comparisonContainer">
+      {districtCards}
       {Object.keys(comparisonObject).length > 0 && (
         <ComparisonCard comparisonObject={comparisonObject} />
       )}
-      {districtCards}
     </section>
   );
 };
