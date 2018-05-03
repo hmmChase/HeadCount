@@ -27,7 +27,6 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        false,
         Array [
           <Card
             changeSelectedDistricts={[Function]}
@@ -36,12 +35,12 @@ ShallowWrapper {
             changeSelectedDistricts={[Function]}
 />,
         ],
+        false,
       ],
       "className": "comparisonContainer",
     },
     "ref": null,
     "rendered": Array [
-      false,
       Object {
         "instance": null,
         "key": "Card 0",
@@ -64,6 +63,7 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      false,
     ],
     "type": "section",
   },
@@ -74,7 +74,6 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          false,
           Array [
             <Card
               changeSelectedDistricts={[Function]}
@@ -83,12 +82,12 @@ ShallowWrapper {
               changeSelectedDistricts={[Function]}
 />,
           ],
+          false,
         ],
         "className": "comparisonContainer",
       },
       "ref": null,
       "rendered": Array [
-        false,
         Object {
           "instance": null,
           "key": "Card 0",
@@ -111,6 +110,7 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        false,
       ],
       "type": "section",
     },

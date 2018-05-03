@@ -8,7 +8,8 @@ export default class DistrictRepository {
       if (!districtObject[district.Location]) {
         districtObject[district.Location] = {
           location: district.Location.toUpperCase(),
-          stats: {}
+          stats: {},
+          average: null
         };
       }
       districtObject[district.Location].stats = Object.assign(
@@ -18,6 +19,14 @@ export default class DistrictRepository {
       );
       return districtObject;
     }, {});
+
+    Object.keys(DistrictData).forEach(key => {
+      const average = Object.values(DistrictData[key].stats).reduce((total, num) => {
+        return total + num;
+      }, 0) / Object.values(DistrictData[key].stats).length
+      
+      DistrictData[key].average = Math.round(1000 * average) / 1000;
+    })
     return DistrictData;
   }
 

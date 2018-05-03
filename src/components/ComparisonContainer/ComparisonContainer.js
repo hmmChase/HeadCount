@@ -12,6 +12,7 @@ const ComparisonContainer = ({
   const districtCards = comparedDistricts.map((district, index) => {
     return (
       <Card
+        clicked={true}
         key={`Card ${index}`}
         {...district}
         changeSelectedDistricts={changeSelectedDistricts}
@@ -21,10 +22,10 @@ const ComparisonContainer = ({
 
   return (
     <section className="comparisonContainer">
+      {districtCards}
       {Object.keys(comparisonObject).length > 0 && (
         <ComparisonCard comparisonObject={comparisonObject} />
       )}
-      {districtCards}
     </section>
   );
 };

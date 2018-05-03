@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Card.css';
 
-const Card = ({ location, stats, changeSelectedDistricts, clicked }) => {
+const Card = ({ location, stats, changeSelectedDistricts, clicked, average }) => {
   let statsKeys = Object.keys(stats);
   let statsList = statsKeys.map((stat, index) => {
     const statColor = stats[stat] >= 0.5 ? 'aboveColor' : 'belowColor';
@@ -28,6 +28,7 @@ const Card = ({ location, stats, changeSelectedDistricts, clicked }) => {
     >
       <h3>{location}</h3>
       <ul>{statsList}</ul>
+      {clicked && <p>Average: {average}</p>}
     </article>
   );
 };
@@ -36,7 +37,7 @@ Card.propTypes = {
   location: PropTypes.string.isRequired,
   stats: PropTypes.object.isRequired,
   changeSelectedDistricts: PropTypes.func.isRequired,
-  clicked: PropTypes.bool.isRequired
+  clicked: PropTypes.bool
 };
 
 export default Card;
