@@ -1,9 +1,9 @@
 .cardContainer {
-  width: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-  justify-content: space-around;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
 }

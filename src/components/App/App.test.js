@@ -1,6 +1,5 @@
 import React from 'react';
 import App from './App';
-import kinderData from '../../data/kindergartners_in_full_day_program';
 
 import { shallow } from 'enzyme';
 
