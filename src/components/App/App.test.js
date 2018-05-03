@@ -88,10 +88,15 @@ describe('App', () => {
 
   describe('changeSelectedDistricts', () => {
     
-    it.skip('should remove duplicates', () => {
+    it('should remove duplicates', () => {
       const expectedResult = [mockCard2]
+      app.setState({
+        comparedDistricts: [
+          mockCard1, mockCard2
+        ]
+      })
       app.instance().changeSelectedDistricts(mockCard1.location)
-      
+      app.update()
       expect(app.state().comparedDistricts).toEqual(expectedResult)
     })
 
@@ -107,7 +112,7 @@ describe('App', () => {
         comparedDistricts: [mockCard1, mockCard2]
       })
       app.instance().updateComparedDistricts = jest.fn()
-      app.instance().changeSelectedDistricts(mockCard2.location)
+      app.instance().changeSelectedDistricts(mockCard3.location)
 
       expect(app.instance().updateComparedDistricts).toHaveBeenCalledTimes(1)
     })
