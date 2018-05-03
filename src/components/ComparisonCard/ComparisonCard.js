@@ -18,4 +18,4 @@ ComparisonCard.propTypes = {
   comparisonObject: PropTypes.object.isRequired
 }
 
-export default ComparisonCard
+export default ComparisonCard;
