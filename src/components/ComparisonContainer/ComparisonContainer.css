@@ -12,6 +12,15 @@
   animation-duration: 2s;
 }
 
+.comparisonContainer .clicked {
+  border: none;
+  background-color: #ffffff63;
+}
+
+.comparisonContainer .clicked:hover {
+  box-shadow: none;
+}
+
 @keyframes header-slide-open {
   from {margin-left: -300px};
   to {margin-left: 0}
