@@ -1,10 +1,6 @@
 import React from 'react';
 import App from './App';
-import kinderData from '../../data/kindergartners_in_full_day_program';
-import DistrictContainer from '../DistrictContainer/DistrictContainer';
-
 import { shallow } from 'enzyme';
-import DistrictRepository from '../../helper';
 
 const mockCard1 = {
   location: 'COLORADO',
@@ -21,7 +17,7 @@ const mockCard1 = {
     '2013': 0.703,
     '2014': 0.741
   }
-}
+};
 
 const mockCard2 = {
   location: 'ACADEMY 20',
@@ -38,7 +34,7 @@ const mockCard2 = {
     '2013': 0.488,
     '2014': 0.49
   }
-}
+};
 
 const mockCard3 = {
   location: 'ADAMS COUNTY 14',
@@ -55,9 +51,9 @@ const mockCard3 = {
     2013: 0.998,
     2014: 1
   }
-}
+};
 
-const mockFoundDistricts = [mockCard1, mockCard2];
+// const mockFoundDistricts = [mockCard1, mockCard2];
 
 describe('App', () => {
   let app;
@@ -87,45 +83,42 @@ describe('App', () => {
   });
 
   describe('changeSelectedDistricts', () => {
-    
     it('should remove duplicates', () => {
-      const expectedResult = [mockCard2]
+      const expectedResult = [mockCard2];
       app.setState({
-        comparedDistricts: [
-          mockCard1, mockCard2
-        ]
-      })
-      app.instance().changeSelectedDistricts(mockCard1.location)
-      app.update()
-      expect(app.state().comparedDistricts).toEqual(expectedResult)
-    })
+        comparedDistricts: [mockCard1, mockCard2]
+      });
+      app.instance().changeSelectedDistricts(mockCard1.location);
+      app.update();
+      expect(app.state().comparedDistricts).toEqual(expectedResult);
+    });
 
     it('should add to comparison array', () => {
-      const expectedResult = [mockCard2]
-      app.instance().changeSelectedDistricts(mockCard2.location)
+      const expectedResult = [mockCard2];
+      app.instance().changeSelectedDistricts(mockCard2.location);
 
-      expect(app.state().comparedDistricts).toEqual(expectedResult)
-    })
+      expect(app.state().comparedDistricts).toEqual(expectedResult);
+    });
 
     it('calls updateComparedDistricts when there are two compared districts', () => {
       app.setState({
         comparedDistricts: [mockCard1, mockCard2]
-      })
-      app.instance().updateComparedDistricts = jest.fn()
-      app.instance().changeSelectedDistricts(mockCard3.location)
+      });
+      app.instance().updateComparedDistricts = jest.fn();
+      app.instance().changeSelectedDistricts(mockCard3.location);
 
-      expect(app.instance().updateComparedDistricts).toHaveBeenCalledTimes(1)
-    })
+      expect(app.instance().updateComparedDistricts).toHaveBeenCalledTimes(1);
+    });
 
     it('replaces second card when there are two', () => {
       app.setState({
         comparedDistricts: [mockCard1, mockCard2]
-      })
-      const expectedResult = [mockCard1, mockCard3]
+      });
+      const expectedResult = [mockCard1, mockCard3];
 
-      app.instance().changeSelectedDistricts(mockCard3.location)
+      app.instance().changeSelectedDistricts(mockCard3.location);
 
-      expect(app.state().comparedDistricts).toEqual(expectedResult)
-    })
-  })
+      expect(app.state().comparedDistricts).toEqual(expectedResult);
+    });
+  });
 });

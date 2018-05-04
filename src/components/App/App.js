@@ -35,12 +35,13 @@ class App extends Component {
 
   changeSelectedDistricts = district => {
     const selectedDistrictObject = this.state.district.findByName(district);
-    const duplicate = this.state.comparedDistricts.some((districtObj) => {
-      return districtObj.location === selectedDistrictObject.location
+    const duplicate = this.state.comparedDistricts.some(districtObj => {
+      return districtObj.location === selectedDistrictObject.location;
     });
     if (duplicate) {
       const filteredDistricts = this.state.comparedDistricts.filter(
-        comparedDistrict => comparedDistrict.location !== selectedDistrictObject.location
+        comparedDistrict =>
+          comparedDistrict.location !== selectedDistrictObject.location
       );
       this.setState({
         comparedDistricts: filteredDistricts,
@@ -63,9 +64,8 @@ class App extends Component {
 
   updateComparedDistricts = newState => {
     if (this.state.comparedDistricts.length >= 1) {
-      this.setState(
-        { comparedDistricts: newState },
-        () => this.runComparison()
+      this.setState({ comparedDistricts: newState }, () =>
+        this.runComparison()
       );
     }
     this.setState({
