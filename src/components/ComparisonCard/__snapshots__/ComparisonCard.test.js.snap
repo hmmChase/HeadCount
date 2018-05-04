@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ComparisonContainer matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ComparisonCard
+    comparisonObject={
+        Object {
+            "ACADEMY 20": 0.407,
+            "ADAMS COUNTY 14": 0.709,
+            "compared": 0.574,
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h4>
+          ACADEMY 20
+           : 
+          0.407
+           
+</h4>,
+        <h4>
+          ADAMS COUNTY 14
+           : 
+          0.709
+           
+</h4>,
+        <h3>
+          Comparison: 
+          0.574
+</h3>,
+      ],
+      "className": "comparisonCard",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "ACADEMY 20",
+            " : ",
+            0.407,
+            " ",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "ACADEMY 20",
+          " : ",
+          0.407,
+          " ",
+        ],
+        "type": "h4",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "ADAMS COUNTY 14",
+            " : ",
+            0.709,
+            " ",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "ADAMS COUNTY 14",
+          " : ",
+          0.709,
+          " ",
+        ],
+        "type": "h4",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Comparison: ",
+            0.574,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Comparison: ",
+          0.574,
+        ],
+        "type": "h3",
+      },
+    ],
+    "type": "article",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h4>
+            ACADEMY 20
+             : 
+            0.407
+             
+</h4>,
+          <h4>
+            ADAMS COUNTY 14
+             : 
+            0.709
+             
+</h4>,
+          <h3>
+            Comparison: 
+            0.574
+</h3>,
+        ],
+        "className": "comparisonCard",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "ACADEMY 20",
+              " : ",
+              0.407,
+              " ",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "ACADEMY 20",
+            " : ",
+            0.407,
+            " ",
+          ],
+          "type": "h4",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "ADAMS COUNTY 14",
+              " : ",
+              0.709,
+              " ",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "ADAMS COUNTY 14",
+            " : ",
+            0.709,
+            " ",
+          ],
+          "type": "h4",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Comparison: ",
+              0.574,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Comparison: ",
+            0.574,
+          ],
+          "type": "h3",
+        },
+      ],
+      "type": "article",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
