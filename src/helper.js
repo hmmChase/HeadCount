@@ -1,10 +1,10 @@
 export default class DistrictRepository {
-  constructor(data) {
-    this.stats = this.cleanData(data);
+  constructor(sourceData) {
+    this.stats = this.cleanData(sourceData);
   }
 
-  cleanData(data) {
-    let DistrictData = data.reduce((districtObject, district) => {
+  cleanData(sourceData) {
+    let DistrictData = sourceData.reduce((districtObject, district) => {
       if (!districtObject[district.Location]) {
         districtObject[district.Location] = {
           location: district.Location.toUpperCase(),
@@ -21,12 +21,13 @@ export default class DistrictRepository {
     }, {});
 
     Object.keys(DistrictData).forEach(key => {
-      const average = Object.values(DistrictData[key].stats).reduce((total, num) => {
-        return total + num;
-      }, 0) / Object.values(DistrictData[key].stats).length
-      
+      const average =
+        Object.values(DistrictData[key].stats).reduce((total, num) => {
+          return total + num;
+        }, 0) / Object.values(DistrictData[key].stats).length;
+
       DistrictData[key].average = Math.round(1000 * average) / 1000;
-    })
+    });
     return DistrictData;
   }
 
