@@ -8,7 +8,7 @@ let mockProps = {
   stats: {},
   changeSelectedDistricts: jest.fn(),
   clicked: false,
-  average: 0.0343
+  average: 0.034
 };
 
 describe('Card', () => {
@@ -21,7 +21,7 @@ describe('Card', () => {
     expect(card).toMatchSnapshot();
   });
 
-  it("not have a class of 'clicked' if the card has not been selected", () => {
+  it("doesn't have a class of 'clicked' if the card has not been selected", () => {
     mockProps.clicked = false;
 
     expect(card.hasClass('clicked')).toEqual(false);
@@ -31,7 +31,7 @@ describe('Card', () => {
     mockProps.clicked = true;
     card = shallow(<Card {...mockProps} />);
 
-    expect(card.hasClass('clicked')).toEqual(true);
+    expect(card.hasClass('clicked')).toBe(true);
   });
 
   it('calls changeSelectedDistricts when card is clicked', () => {
@@ -39,5 +39,21 @@ describe('Card', () => {
     card.find('.card').simulate('click');
 
     expect(card.prop('changeSelectedDistricts')).toHaveBeenCalledTimes(1);
+  });
+
+  it('if stat value < .5, span has class .belowColor ', () => {
+    mockProps.stats = { 2004: 0.24 };
+    card = mount(<Card {...mockProps} />);
+    const spanCard = card.find('span');
+
+    expect(spanCard.hasClass('belowColor')).toBe(true);
+  });
+
+  it('if stat value >= .5, span has class .aboveColor ', () => {
+    mockProps.stats = { 2004: 0.74 };
+    card = mount(<Card {...mockProps} />);
+    const spanCard = card.find('span');
+
+    expect(spanCard.hasClass('aboveColor')).toBe(true);
   });
 });
