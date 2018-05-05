@@ -10,11 +10,11 @@ Chase Richard [GitHub](https://github.com/hmmChase)
 
 ### Original comp:
 
-![Comp Spec](./assets/HeadCount1.png)  
+![Comp Spec](./src/assets/HeadCount1.png)  
 
 ### Our design:
 
-![Project Screenshot](../assets/HeadCount2.png)
+![Project Screenshot](./src/assets/HeadCount2.png)
 
 ## Set Up
 
