@@ -13,8 +13,8 @@ const Card = ({
   let statsList = statsKeys.map((stat, index) => {
     const statColor = stats[stat] >= 0.5 ? 'aboveColor' : 'belowColor';
     return (
-      <li key={`year ${index}`}>
-        {stat} : <span className={statColor}>{stats[stat]}</span>
+      <li key={`year ${index}`} className={statColor}>
+        {stat} : {stats[stat]}
       </li>
     );
   });

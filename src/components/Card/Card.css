@@ -1,9 +1,9 @@
 .aboveColor {
-  color: green;
+  background: rgb(152, 251, 152, 0.2);
 }
 
 .belowColor {
-  color: red;
+  background: rgb(219, 112, 147, 0.2)
 }
 
 .selectedCard {
@@ -39,7 +39,8 @@
 }
 
 .card li {
-  width: 30%;
+  width: 28%;
+  padding-left: 5px;
   margin: auto;
   text-align: justify;
 }
