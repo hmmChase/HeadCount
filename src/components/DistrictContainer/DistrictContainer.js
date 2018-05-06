@@ -10,7 +10,8 @@ const DistrictContainer = ({
 }) => {
   const districtCards = foundDistricts.map((district, index) => {
     let clicked;
-    if (comparedDistricts.includes(district)) {
+    const comparedNames = comparedDistricts.map(district => district.location)
+    if (comparedNames.includes(district.location)) {
       clicked = true;
     } else {
       clicked = false;

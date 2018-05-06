@@ -5,7 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Card
-    average={0.0343}
+    average={0.034}
     changeSelectedDistricts={[Function]}
     clicked={false}
     location="lfjlsda"
