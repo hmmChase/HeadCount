@@ -9,17 +9,15 @@ class Form extends Component {
     this.state = {
       searchInput: ''
     };
-
-    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  handleInputChange(event) {
-    let inputvalue = event.target.value;
+  handleInputChange = event => {
+    let searchInput = event.target.value;
     this.setState({
-      searchInput: inputvalue
+      searchInput
     });
-    this.props.filterDistricts(inputvalue);
-  }
+    this.props.filterDistricts(searchInput);
+  };
 
   render() {
     return (
