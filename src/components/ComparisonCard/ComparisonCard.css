@@ -17,4 +17,14 @@
   animation-name: card-opacity;
   color: white;
   padding-top: 10vh;
+  min-height: 42vh;
+}
+
+.comparisonCard h3 {
+  font-size: 3vh;
+  color: black;
+  background-color: #efd9df;
+  padding: 2vh;
+  margin-top: 10vh;
+  border: 1px solid white;
 }
