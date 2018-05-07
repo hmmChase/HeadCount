@@ -17,6 +17,7 @@
   animation-name: card-opacity;
   color: white;
   padding-top: 10vh;
+  min-height: 42vh;
 }
 
 .comparisonCard h3 {
