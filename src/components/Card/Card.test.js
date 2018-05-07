@@ -44,16 +44,16 @@ describe('Card', () => {
   it('if stat value < .5, span has class .belowColor ', () => {
     mockProps.stats = { 2004: 0.24 };
     card = mount(<Card {...mockProps} />);
-    const spanCard = card.find('span');
+    const liCard = card.find('li');
 
-    expect(spanCard.hasClass('belowColor')).toBe(true);
+    expect(liCard.hasClass('belowColor')).toBe(true);
   });
 
   it('if stat value >= .5, span has class .aboveColor ', () => {
     mockProps.stats = { 2004: 0.74 };
     card = mount(<Card {...mockProps} />);
-    const spanCard = card.find('span');
+    const liCard = card.find('li');
 
-    expect(spanCard.hasClass('aboveColor')).toBe(true);
+    expect(liCard.hasClass('aboveColor')).toBe(true);
   });
 });
