@@ -28,3 +28,9 @@ h1 {
 input:focus {
   outline: none;
 }
+
+@media only screen and (max-width: 500px) {
+  .formContainer {
+      height: 34vh;
+  }
+}
